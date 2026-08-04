@@ -41,11 +41,10 @@
   .star-dots{background-image:radial-gradient(circle at 1px 1px, rgba(201,154,63,0.35) 1px, transparent 0); background-size:22px 22px;}
 
   /* ---------- Nav ---------- */
-  header{position:sticky; top:0; z-index:40; width:100%; max-width:1200px; margin:0 auto; transition:background .3s ease, box-shadow .3s ease, max-width .3s ease, top .3s ease, border-radius .3s ease, border-color .3s ease;}
-  header.scrolled{background:rgba(247,248,251,.92); backdrop-filter:blur(10px); box-shadow:var(--shadow-soft);}
+  header{position:sticky; top:0; z-index:40; width:100%; max-width:1200px; margin:0 auto; border:1px solid transparent; border-radius:0; transition:background .3s ease, box-shadow .3s ease, max-width .3s ease, top .3s ease, border-radius .3s ease, border-color .3s ease;}
+  header.scrolled{background:rgba(247,248,251,.92); backdrop-filter:blur(10px); box-shadow:var(--shadow-soft); max-width:94%; top:10px; border-radius:16px; border-color:var(--ink-100);}
   @media(min-width:1024px){
-    header{border:1px solid transparent; border-radius:0;}
-    header.scrolled{max-width:1000px; top:14px; border-radius:14px; border-color:var(--ink-100);}
+    header.scrolled{max-width:1000px; top:14px; border-radius:14px;}
     header.scrolled nav.navbar{padding-top:10px; padding-bottom:10px;}
   }
   nav.navbar{display:flex; align-items:center; justify-content:space-between; padding:14px 0; max-width:1200px; margin:0 auto; padding-left:20px; padding-right:20px; transition:padding .3s ease;}
@@ -267,7 +266,10 @@
   @keyframes spin{to{transform:rotate(360deg);}}
 
   /* ---------- Footer ---------- */
-  footer{background:var(--ink-900); color:var(--ink-100);}
+  footer{background:var(--ink-900); color:var(--ink-100); position:relative; overflow:hidden; border-radius:40px 40px 0 0; background-image:radial-gradient(35% 160px at 50% 0%, rgba(255,255,255,.07), transparent);}
+  .footer-glow{position:absolute; top:0; left:50%; width:33%; height:1px; transform:translate(-50%,-50%); background:rgba(255,255,255,.25); filter:blur(4px); border-radius:999px;}
+  footer .reveal{filter:blur(4px); transition:opacity .8s ease, transform .8s ease, filter .8s ease;}
+  footer .reveal.in{filter:blur(0);}
   .footer-grid{display:grid; gap:40px; padding:64px 0;}
   @media(min-width:1024px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr;}}
   .footer-desc{margin-top:16px; max-width:280px; font-size:.88rem; line-height:1.6; color:var(--ink-300);}
@@ -685,8 +687,9 @@
 
 <!-- ================= FOOTER ================= -->
 <footer>
+  <span class="footer-glow"></span>
   <div class="container footer-grid">
-    <div>
+    <div class="reveal">
       <a href="#" class="logo" data-nav="home">
         <span class="logo-mark"><img class="brand-logo-img" alt="WeMentors Academy" /></span>
         <span class="logo-text" style="color:#fff;">WeMentors<span class="logo-sub">Academy</span></span>
@@ -699,14 +702,14 @@
         <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5ZM.24 8.5h4.5V23H.24V8.5ZM8.5 8.5h4.3v2h.06c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9V23h-4.5v-6.4c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4V23H8.5V8.5Z"/></svg></a>
       </div>
     </div>
-    <div>
+    <div class="reveal" style="transition-delay:.1s;">
       <p class="footer-heading">Explore</p>
       <ul class="footer-links">
         <li><a href="#" data-nav="about">About us</a></li>
         <li><a href="#" data-nav="courses">Courses</a></li>
       </ul>
     </div>
-    <div>
+    <div class="reveal" style="transition-delay:.2s;">
       <p class="footer-heading">Programs</p>
       <ul class="footer-links">
         <li><a href="#" data-nav="courses" data-filter-target="foundation">Grade 3–5 Foundation Years</a></li>
@@ -715,7 +718,7 @@
         <li><a href="#" data-nav="courses" data-filter-target="communication">Spoken English</a></li>
       </ul>
     </div>
-    <div>
+    <div class="reveal" style="transition-delay:.3s;">
       <p class="footer-heading">Stay in the loop</p>
       <p style="margin-top:12px; font-size:.85rem; color:var(--ink-300);">Study tips and admission updates, once or twice a month.</p>
       <form class="newsletter-form" id="newsletterForm">
@@ -794,7 +797,7 @@ const FAQS = [
 ];
 
 const GRADE_OPTIONS = ["Grade 3","Grade 4","Grade 5","Grade 6","Grade 7","Grade 8","Grade 9","Grade 10","Adult / Professional"];
-const SUBJECT_OPTIONS = ["Mathematics","Science","Physics","Chemistry","Biology","English (Academic)","Spoken English & Public Speaking","Not sure yet"];
+const SUBJECT_OPTIONS = ["Mathematics","Science","Physics","Chemistry","English (Academic)","Spoken English & Public Speaking","Not sure yet"];
 const TIME_OPTIONS = ["9:00 AM – 11:00 AM","11:00 AM – 1:00 PM","3:00 PM – 5:00 PM","5:00 PM – 7:00 PM","7:00 PM – 9:00 PM"];
 
 const checkIcon = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>';
