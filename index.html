@@ -221,22 +221,6 @@
   .timeline-item h3{margin-top:4px; font-size:1.1rem; color:var(--ink-900);}
   .timeline-item p{margin-top:4px; font-size:.88rem; line-height:1.6; color:var(--ink-600);}
 
-  /* ---------- Gallery ---------- */
-  .gallery-grid{margin-top:32px; columns:1; column-gap:16px;}
-  @media(min-width:640px){.gallery-grid{columns:2;}}
-  @media(min-width:1024px){.gallery-grid{columns:3;}}
-  .gallery-item{margin-bottom:16px; break-inside:avoid; border-radius:var(--radius); overflow:hidden; border:none; padding:0; display:block; width:100%; background:none;}
-  .gallery-item img{width:100%; object-fit:cover; transition:transform .3s;}
-  .gallery-item:hover img{transform:scale(1.05);}
-  .lightbox{position:fixed; inset:0; z-index:60; display:none; align-items:center; justify-content:center; background:rgba(10,17,34,.92); padding:16px;}
-  .lightbox.open{display:flex;}
-  .lightbox img{max-height:80vh; max-width:900px; width:100%; object-fit:contain; border-radius:16px;}
-  .lightbox-close, .lightbox-prev, .lightbox-next{position:absolute; display:grid; place-items:center; height:44px; width:44px; border-radius:999px; background:rgba(255,255,255,.1); color:#fff; border:none;}
-  .lightbox-close{top:20px; right:20px;}
-  .lightbox-prev{left:16px; top:50%; transform:translateY(-50%);}
-  .lightbox-next{right:16px; top:50%; transform:translateY(-50%);}
-  .lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover{background:rgba(255,255,255,.2);}
-
   /* ---------- FAQ ---------- */
   .faq-wrap{border:1px solid var(--ink-100); border-radius:var(--radius); background:#fff; overflow:hidden;}
   .faq-item + .faq-item{border-top:1px solid var(--ink-100);}
@@ -359,7 +343,6 @@
       <li><a href="#" data-nav="home" class="active">Home</a></li>
       <li><a href="#" data-nav="about">About</a></li>
       <li><a href="#" data-nav="courses">Courses</a></li>
-            <li><a href="#" data-nav="gallery">Gallery</a></li>
       <li><a href="#" data-nav="contact">Contact</a></li>
     </ul>
 
@@ -385,7 +368,6 @@
     <li><a href="#" data-nav="home" class="active">Home</a></li>
     <li><a href="#" data-nav="about">About</a></li>
     <li><a href="#" data-nav="courses">Courses</a></li>
-          <li><a href="#" data-nav="gallery">Gallery</a></li>
     <li><a href="#" data-nav="contact">Contact</a></li>
     <li style="padding-top:8px;"><button class="btn btn-primary" style="width:100%; justify-content:center;" id="mobileBookBtn">Book Free Demo</button></li>
   </ul>
@@ -662,29 +644,6 @@
   </section>
 </div>
 
-<!-- ================= GALLERY VIEW ================= -->
-<div data-view="gallery">
-  <section class="page-header star-dots">
-    <div class="container">
-      <span class="eyebrow">Gallery</span>
-      <h1>A look inside <span class="accent">WeMentors</span></h1>
-      <p>A preview of our classes, mentors and the learning space we're building.</p>
-    </div>
-  </section>
-  <section>
-    <div class="container">
-      <div class="filters" id="galleryFilters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="classes">Classes</button>
-        <button class="filter-btn" data-filter="students">Students</button>
-        <button class="filter-btn" data-filter="events">Events</button>
-        <button class="filter-btn" data-filter="campus">Campus</button>
-      </div>
-      <div class="gallery-grid" id="galleryGrid"></div>
-    </div>
-  </section>
-</div>
-
 <!-- ================= CONTACT VIEW ================= -->
 <div data-view="contact">
   <section class="page-header star-dots">
@@ -745,7 +704,6 @@
       <ul class="footer-links">
         <li><a href="#" data-nav="about">About us</a></li>
         <li><a href="#" data-nav="courses">Courses</a></li>
-                <li><a href="#" data-nav="gallery">Gallery</a></li>
       </ul>
     </div>
     <div>
@@ -806,19 +764,6 @@
   </div>
 </div>
 
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
-  </button>
-  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-  </button>
-  <img id="lightboxImg" src="" alt="" />
-  <button class="lightbox-next" id="lightboxNext" aria-label="Next image">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
-  </button>
-</div>
-
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -848,17 +793,6 @@ const FAQS = [
   { q:"Can I change my mentor or schedule later?", a:"Yes. Reach out to our team any time and we'll adjust your mentor, batch or timing to fit your student's evolving needs." }
 ];
 
-const GALLERY = [
-  { src:"https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop", alt:"Mentor guiding a live online class", category:"classes" },
-  { src:"https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop", alt:"Student taking notes during a session", category:"students" },
-  { src:"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop", alt:"Academy campus workspace", category:"campus" },
-  { src:"https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=800&auto=format&fit=crop", alt:"Public speaking practice session", category:"events" },
-  { src:"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800&auto=format&fit=crop", alt:"Group study session", category:"students" },
-  { src:"https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop", alt:"Mentor explaining a concept on whiteboard", category:"classes" },
-  { src:"https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop", alt:"Student presenting during public speaking class", category:"events" },
-  { src:"https://images.unsplash.com/photo-1519452575417-564c1401ecc0?q=80&w=800&auto=format&fit=crop", alt:"Academy reception area", category:"campus" }
-];
-
 const GRADE_OPTIONS = ["Grade 3","Grade 4","Grade 5","Grade 6","Grade 7","Grade 8","Grade 9","Grade 10","Adult / Professional"];
 const SUBJECT_OPTIONS = ["Mathematics","Science","Physics","Chemistry","Biology","English (Academic)","Spoken English & Public Speaking","Not sure yet"];
 const TIME_OPTIONS = ["9:00 AM – 11:00 AM","11:00 AM – 1:00 PM","3:00 PM – 5:00 PM","5:00 PM – 7:00 PM","7:00 PM – 9:00 PM"];
@@ -886,15 +820,11 @@ function faqItem(item, i){
     <div class="faq-a"><div class="faq-a-inner">${item.a}</div></div>
   </div>`;
 }
-function galleryItem(img, idx){
-  return `<button class="gallery-item" data-idx="${idx}"><img src="${img.src}" alt="${img.alt}" loading="lazy" /></button>`;
-}
 
 /* ---------------- Populate static sections ---------------- */
 document.getElementById('homeCourseGrid').innerHTML = COURSES.map(courseCard).join('');
 document.getElementById('coursesPageGrid').innerHTML = COURSES.map(c=>`<div data-cat="${c.category}">${courseCard(c)}</div>`).join('');
 document.getElementById('faqWrap').innerHTML = FAQS.map((f,i)=>faqItem(f,i)).join('');
-document.getElementById('galleryGrid').innerHTML = GALLERY.map(galleryItem).join('');
 document.getElementById('whatsappBtn').href = `https://wa.me/919000000000?text=${encodeURIComponent("Hi WeMentors Academy, I'd like to know more about your programs.")}`;
 
 /* FAQ accordion */
@@ -922,43 +852,6 @@ document.getElementById('courseFilters').addEventListener('click', e=>{
     el.style.display = (f==='all' || el.dataset.cat===f) ? '' : 'none';
   });
 });
-
-/* ---------------- Gallery filter + lightbox ---------------- */
-document.getElementById('galleryFilters').addEventListener('click', e=>{
-  const btn = e.target.closest('.filter-btn'); if(!btn) return;
-  document.querySelectorAll('#galleryFilters .filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  const f = btn.dataset.filter;
-  document.querySelectorAll('#galleryGrid .gallery-item').forEach((el,i)=>{
-    el.style.display = (f==='all' || GALLERY[i].category===f) ? '' : 'none';
-  });
-});
-
-let currentGalleryList = GALLERY;
-let lightboxIndex = 0;
-function visibleGalleryIndices(){
-  return Array.from(document.querySelectorAll('#galleryGrid .gallery-item')).filter(el=>el.style.display!=='none').map(el=>+el.dataset.idx);
-}
-function openLightbox(idx){
-  const visible = visibleGalleryIndices();
-  lightboxIndex = visible.indexOf(idx) >= 0 ? visible.indexOf(idx) : 0;
-  currentGalleryList = visible.map(i=>GALLERY[i]);
-  showLightboxImage();
-  document.getElementById('lightbox').classList.add('open');
-}
-function showLightboxImage(){
-  const img = currentGalleryList[lightboxIndex];
-  document.getElementById('lightboxImg').src = img.src;
-  document.getElementById('lightboxImg').alt = img.alt;
-}
-document.getElementById('galleryGrid').addEventListener('click', e=>{
-  const btn = e.target.closest('.gallery-item'); if(!btn) return;
-  openLightbox(+btn.dataset.idx);
-});
-document.getElementById('lightboxClose').addEventListener('click', ()=>document.getElementById('lightbox').classList.remove('open'));
-document.getElementById('lightbox').addEventListener('click', e=>{ if(e.target.id==='lightbox') document.getElementById('lightbox').classList.remove('open'); });
-document.getElementById('lightboxPrev').addEventListener('click', ()=>{ lightboxIndex=(lightboxIndex-1+currentGalleryList.length)%currentGalleryList.length; showLightboxImage(); });
-document.getElementById('lightboxNext').addEventListener('click', ()=>{ lightboxIndex=(lightboxIndex+1)%currentGalleryList.length; showLightboxImage(); });
 
 /* ---------------- Demo booking form (shared builder) ---------------- */
 function buildFormHTML(prefix){
@@ -1107,7 +1000,7 @@ function closeModal(){ document.getElementById('modalOverlay').classList.remove(
 document.getElementById('navBookBtn').addEventListener('click', openModal);
 document.getElementById('mobileBookBtn').addEventListener('click', openModal);
 document.getElementById('modalOverlay').addEventListener('click', e=>{ if(e.target.id==='modalOverlay') closeModal(); });
-document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); document.getElementById('lightbox').classList.remove('open'); } });
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ closeModal(); } });
 
 /* ---------------- Navigation (single-page view switch) ---------------- */
 function navigateTo(view, filterTarget){
