@@ -163,9 +163,13 @@
   @media(min-width:1024px){.grid-4{grid-template-columns:repeat(4,1fr);}}
   .grid-3{display:grid; gap:24px; grid-template-columns:1fr;}
   @media(min-width:640px){.grid-3{grid-template-columns:repeat(3,1fr);}}
+  .grid-2{display:grid; gap:24px; grid-template-columns:1fr;}
+  @media(min-width:640px){.grid-2{grid-template-columns:repeat(2,1fr);}}
   .card{background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow-soft); transition:transform .2s;}
   .card:hover{transform:translateY(-4px);}
   .card .circ-icon{display:grid; place-items:center; height:44px; width:44px; border-radius:999px; background:var(--ink-800); color:var(--gold-300);}
+  .founder-avatar{display:grid; place-items:center; height:64px; width:64px; border-radius:999px; background:var(--ink-900); color:#fff; font-family:var(--font-display); font-size:1.3rem; flex-shrink:0;}
+  .founder-card{display:flex; gap:18px; align-items:flex-start;}
   .card h3{margin-top:20px; font-size:1.1rem; color:var(--ink-900);}
   .card p{margin-top:8px; font-size:.9rem; line-height:1.6; color:var(--ink-600);}
 
@@ -280,11 +284,6 @@
   .footer-links{list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:10px;}
   .footer-links a{font-size:.88rem; color:var(--ink-300); text-decoration:none;}
   .footer-links a:hover{color:#fff;}
-  .newsletter-form{margin-top:16px; display:flex; gap:8px;}
-  .newsletter-form input{width:100%; border-radius:999px; border:1px solid var(--ink-700); background:var(--ink-800); padding:10px 16px; font-size:.85rem; color:#fff;}
-  .newsletter-form input:focus{outline:none; border-color:var(--gold-400);}
-  .newsletter-form button{flex-shrink:0; display:grid; place-items:center; height:38px; width:38px; border-radius:999px; background:var(--gold-400); color:var(--ink-900); border:none;}
-  .newsletter-success{margin-top:16px; border-radius:10px; background:var(--ink-800); padding:12px 16px; font-size:.85rem; color:var(--gold-200);}
   .footer-contact{list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; font-size:.85rem; color:var(--ink-300);}
   .footer-contact li{display:flex; align-items:flex-start; gap:10px;}
   .footer-bottom{border-top:1px solid var(--ink-800);}
@@ -580,6 +579,31 @@
     </div>
   </section>
 
+  <section>
+    <div class="container" style="max-width:900px;">
+      <span class="eyebrow">Founders</span>
+      <h2 class="section-title" style="font-size:1.9rem;">The people behind WeMentors</h2>
+      <div class="grid-2" style="margin-top:32px;">
+        <div class="card reveal founder-card">
+          <span class="founder-avatar">SK</span>
+          <div>
+            <h3 style="margin-top:0;">Dr. Saba Nasreen Khan</h3>
+            <p style="color:var(--gold-600); font-weight:600; font-size:.85rem; margin-top:2px;">Co-Founder &amp; Director (English Communication)</p>
+            <p style="margin-top:10px; color:var(--ink-600); line-height:1.6; font-size:.9rem;">Ph.D. in English Literature &bull; TEFL Certified &bull; IELTS Band 8.0</p>
+          </div>
+        </div>
+        <div class="card reveal founder-card">
+          <span class="founder-avatar">SN</span>
+          <div>
+            <h3 style="margin-top:0;">Mrs. Sidra Nafees</h3>
+            <p style="color:var(--gold-600); font-weight:600; font-size:.85rem; margin-top:2px;">Co-Founder &amp; Director (Academics)</p>
+            <p style="margin-top:10px; color:var(--ink-600); line-height:1.6; font-size:.9rem;">M.Sc. Biotechnology (Gold Medalist) &bull; B.Ed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section-mist">
     <div class="container grid-3">
       <div class="card reveal">
@@ -659,18 +683,15 @@
     <div class="container contact-grid">
       <div class="reveal">
         <ul class="contact-list">
-          <li><span class="circ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <div><p class="lab">Address</p><p class="val">4th Floor, Meridian Business Park, HSR Layout, Bengaluru, India</p></div></li>
           <li><span class="circ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
-            <div><p class="lab">Phone / WhatsApp</p><p class="val">+91 90000 00000</p></div></li>
+            <div><p class="lab">Phone / WhatsApp</p><p class="val">+91 76111 92227</p></div></li>
+          <li><span class="circ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+            <div><p class="lab">Alternate</p><p class="val">+91 90398 03526 | +91 88719 34995</p></div></li>
           <li><span class="circ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4Z"/><path d="m4 6 8 7 8-7"/></svg></span>
-            <div><p class="lab">Email</p><p class="val">hello@wementorsacademy.example</p></div></li>
+            <div><p class="lab">Email</p><p class="val">admin@wementors.co</p></div></li>
           <li><span class="circ"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
             <div><p class="lab">Business hours</p><p class="val">Mon–Sat, 9:00 AM – 8:00 IST</p></div></li>
         </ul>
-        <div class="map-embed">
-          <iframe title="WeMentors Academy location" src="https://www.google.com/maps?q=HSR+Layout+Bengaluru&output=embed" width="100%" height="280" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
       </div>
       <div class="reveal">
         <div class="form-card">
@@ -696,8 +717,8 @@
       </a>
       <p class="footer-desc">Personalized mentoring for Grades 3–10 in Maths, Science and all core subjects, plus Spoken English &amp; Public Speaking — delivered live, online, worldwide.</p>
       <div class="social-row">
-        <a href="#" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
-        <a href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        <a href="https://facebook.com/WementorsAcademy" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+        <a href="https://instagram.com/wementors_academy" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
         <a href="#" aria-label="Youtube"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3Z" fill="currentColor"/></svg></a>
         <a href="#" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5ZM.24 8.5h4.5V23H.24V8.5ZM8.5 8.5h4.3v2h.06c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9V23h-4.5v-6.4c0-1.5 0-3.5-2.1-3.5s-2.5 1.7-2.5 3.4V23H8.5V8.5Z"/></svg></a>
       </div>
@@ -719,18 +740,10 @@
       </ul>
     </div>
     <div class="reveal" style="transition-delay:.3s;">
-      <p class="footer-heading">Stay in the loop</p>
-      <p style="margin-top:12px; font-size:.85rem; color:var(--ink-300);">Study tips and admission updates, once or twice a month.</p>
-      <form class="newsletter-form" id="newsletterForm">
-        <label for="footerEmail" style="position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0);">Email address</label>
-        <input id="footerEmail" type="email" required placeholder="you@email.com" />
-        <button type="submit" aria-label="Subscribe"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/></svg></button>
-      </form>
-      <div class="newsletter-success hidden" id="newsletterSuccess">You're subscribed — welcome aboard.</div>
-      <ul class="footer-contact">
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-300)" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>4th Floor, Meridian Business Park, HSR Layout, Bengaluru, India</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-300)" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>+91 90000 00000</li>
-        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-300)" stroke-width="2" style="flex-shrink:0;"><path d="M4 4h16v16H4Z"/><path d="m4 6 8 7 8-7"/></svg>hello@wementorsacademy.example</li>
+      <p class="footer-heading">Get in touch</p>
+      <ul class="footer-contact" style="margin-top:12px;">
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-300)" stroke-width="2" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>+91 76111 92227</li>
+        <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold-300)" stroke-width="2" style="flex-shrink:0;"><path d="M4 4h16v16H4Z"/><path d="m4 6 8 7 8-7"/></svg>admin@wementors.co</li>
       </ul>
     </div>
   </div>
@@ -828,7 +841,7 @@ function faqItem(item, i){
 document.getElementById('homeCourseGrid').innerHTML = COURSES.map(courseCard).join('');
 document.getElementById('coursesPageGrid').innerHTML = COURSES.map(c=>`<div data-cat="${c.category}">${courseCard(c)}</div>`).join('');
 document.getElementById('faqWrap').innerHTML = FAQS.map((f,i)=>faqItem(f,i)).join('');
-document.getElementById('whatsappBtn').href = `https://wa.me/919000000000?text=${encodeURIComponent("Hi WeMentors Academy, I'd like to know more about your programs.")}`;
+document.getElementById('whatsappBtn').href = `https://wa.me/917611192227?text=${encodeURIComponent("Hi WeMentors Academy, I'd like to know more about your programs.")}`;
 
 /* FAQ accordion */
 document.querySelectorAll('.faq-q').forEach(btn=>{
@@ -1056,13 +1069,6 @@ function setMenu(open){
   }
 }
 menuToggle.addEventListener('click', ()=> setMenu(!menuOpen));
-
-/* ---------------- Newsletter ---------------- */
-document.getElementById('newsletterForm').addEventListener('submit', e=>{
-  e.preventDefault();
-  document.getElementById('newsletterForm').classList.add('hidden');
-  document.getElementById('newsletterSuccess').classList.remove('hidden');
-});
 
 /* ---------------- Scroll reveal ---------------- */
 function refreshReveal(){
